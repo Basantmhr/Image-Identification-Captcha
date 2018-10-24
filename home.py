@@ -109,10 +109,11 @@ def click():
 
 	#below defining storevalue function which extract checkbox status value using get() function and store them in variable x1 to x9 for 9 images
 	def storevalue():
-
+		print('in')
 		#definig global variable in order to change value at later stage of execution
 		global x1,x2,x3,x4,x5,x6,x7,x8,x9
 		global v1,v2,v3,v4,v5,v6,v7,v8,v9
+		t1=t2=t3=t4=t5=t6=t7=t8=t9=0
 
 		#using Regex method and compile a regex expression and storing it in variable strc which can be used in re.match() arguments.
 		strc=re.compile(r"("+randomval+".....)")
@@ -126,7 +127,8 @@ def click():
 			else:
 				v1=False			#if regex doesnot match then false is return
 				print(v1)
-		if x1!=1:					#this is to make sure that even after regex is matched (meaning task and image associated are matched) but user does not click it then false is return 
+		if x1!=1:
+			v1=True					#this is to make sure that even after regex is matched (meaning task and image associated are matched) but user does not click it then false is return 
 			if re.match(strc,pic1):
 				v1=False				
 
@@ -139,6 +141,7 @@ def click():
 				v2=False
 				print(v2)
 		if x2!=1:
+			v2=True
 			if re.match(strc,pic2):
 				v2=False
 
@@ -151,6 +154,7 @@ def click():
 				v3=False
 				print(v3)
 		if x3!=1:
+			v3=True
 			if re.match(strc,pic3):
 				v1=False
 
@@ -163,6 +167,7 @@ def click():
 				v4=False
 				print(v4)
 		if x4!=1:
+			v4=True
 			if re.match(strc,pic4):
 				v4=False
 
@@ -175,6 +180,7 @@ def click():
 				v5=False
 				print(v5)
 		if x5!=1:
+			v5=True
 			if re.match(strc,pic5):
 				v5=False
 
@@ -188,6 +194,7 @@ def click():
 				v6=False
 				print(v6)
 		if x6!=1:
+			v6=True
 			if re.match(strc,pic6):
 				v6=False
 
@@ -201,6 +208,7 @@ def click():
 				v7=False
 				print(v7)
 		if x7!=1:
+			v7=True
 			if re.match(strc,pic7):
 				v7=False
 
@@ -214,6 +222,7 @@ def click():
 				v8=False
 				print(v8)
 		if x8!=1:
+			v8=True
 			if re.match(strc,pic8):
 				v8=False
 
@@ -227,14 +236,15 @@ def click():
 				v9=False
 				print(v9)
 		if x9!=1:
+			v9=True
 			if re.match(strc,pic9):
 				v9=False
 
 	#Below veifyfun() is defined to check that given images those are checked are matching with task or not
 	def verifyfun():
-		'''For Debugging 
+		#For Debugging 
 		print(v1,v2,v3,v4,v5,v6,v7,v8,v9)
-		print(x1,x2,x3,x4,x5,x6,x7,x8,x9)'''
+		print(x1,x2,x3,x4,x5,x6,x7,x8,x9)
 
 		#if all the images that are checked and task are matching then success
 		if (v1==True and v2==True and v3==True and v4==True and v5==True and v6==True and v7==True and v8==True and v9==True) and ( x1==1 or x2==1 or  x3==1 or x4==1 or  x5==1 or x6==1 or  x7==1 or x8==1 or x9==1):
