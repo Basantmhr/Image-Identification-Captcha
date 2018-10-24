@@ -248,8 +248,13 @@ def click():
 
 		else:
 			print('Error')#if checked images and task doesnot match then not sucess and even in task given and images checked are matched (nextline)
-						  #but there are some images which user doesdnot click but are matched with  task then varify is not success
-
+			errorframe=Frame(root,height=766,width=1920,bg='#FFF9C4')#but there are some images which user doesdnot click but are matched with  task then varify is not success
+			errorframe.propagate(0)
+			f2.pack_forget()
+			errorframe.pack()
+			errlabel=Label(errorframe,height=3,width=50,text="Verification Unsuccessfull",fg='black',font=('Adobe Fangsong Std R',20,'italic'))
+			errlabel.pack()
+			errlabel.place(x=400,y=400)	
 	#checkbutton are defined below
 	img1=Checkbutton(insideFrame,image=photo1,variable=var1,height=200,width=200,relief=RAISED,bd=4,fg='red',command=storevalue)
 	img1.image=photo1
